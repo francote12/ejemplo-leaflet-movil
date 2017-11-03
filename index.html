@@ -40,6 +40,12 @@
       });
       osm.addTo(mapa);
       
+	    // Capa de servicio WMS delSNIT
+	    
+	var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+    layers: 'limiteprovincial_5k'
+	    }).addTo(map);
+	    
    
       // retorna un color con base en la cantidad de pobladores
       function color(d) {
@@ -80,6 +86,7 @@
 	    
       var baseLayers = {
 	      "OpenStreetMap": osm
+	      "Provincias snit": wmsLayer
       };
       
       var overlays = {
